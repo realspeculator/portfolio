@@ -69,6 +69,6 @@ net_liq_df['port_cumulative_returns'] = (net_liq_df['port_daily_returns'] + 1).c
 net_liq_df = net_liq_df.set_index('date').join(cumul_ret)
 
 
-net_liq_df.to_csv("2023_10_portfolio.csv", index=False)
+net_liq_df.reset_index().to_csv("portfolio.csv", index=False)
 tidy_returns_df.to_csv('benchmark_returns.csv', index=False)
 
